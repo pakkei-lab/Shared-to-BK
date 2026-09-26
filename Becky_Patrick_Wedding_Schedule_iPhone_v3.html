@@ -1,0 +1,369 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#a94f64"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-status-bar-style" content="default"><meta name="apple-mobile-web-app-title" content="婚禮流程"><meta name="format-detection" content="telephone=no"><meta name="mobile-web-app-capable" content="yes">
+<title>Becky & Patrick｜婚禮當日流程時間表</title>
+<style>
+:root{--rose:#b9566a;--deep:#713941;--blush:#fff4f4;--gold:#b58a54;--ink:#30282a;--line:#ead3d5;--card:#fffdfc}
+*{box-sizing:border-box} html{scroll-behavior:smooth} body{margin:0;color:var(--ink);background:#f6f3f2;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang TC","Noto Sans TC","Microsoft JhengHei",sans-serif}
+.hero{position:relative;overflow:hidden;padding:calc(26px + env(safe-area-inset-top)) 18px 24px;text-align:center;background:radial-gradient(circle at 10% 0,#f8d9dc 0 12%,transparent 32%),radial-gradient(circle at 100% 20%,#f6dbdf 0 15%,transparent 38%),linear-gradient(135deg,#fff8f3,#fff1f2)}
+.hero:before,.hero:after{content:"❀";position:absolute;color:#d697a2;font-size:54px;opacity:.35} .hero:before{left:8px;top:5px;transform:rotate(-15deg)} .hero:after{right:10px;bottom:0;transform:rotate(18deg)}
+.names{margin:0;font-family:Georgia,"Times New Roman",serif;font-style:italic;font-weight:500;font-size:clamp(36px,10vw,56px);color:var(--gold);line-height:1} .hero h1{margin:14px 0 8px;color:var(--deep);font-size:clamp(24px,6.5vw,32px);letter-spacing:.18em} .date{display:inline-block;padding:8px 18px;color:white;background:var(--rose);border-radius:999px;font-weight:700;box-shadow:0 6px 16px #b9566a33} .route{max-width:680px;margin:14px auto 0;font-weight:700;line-height:1.65;font-size:16px}
+.key-times{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;max-width:760px;margin:-1px auto 0;padding:14px 12px;background:#fff;border-bottom:1px solid var(--line)} .key{text-align:center;padding:8px 4px;border-right:1px dashed var(--line)} .key:last-child{border-right:0} .key strong{display:block;color:var(--rose);font-size:23px} .key span{font-size:14px;line-height:1.4}
+.sticky{position:sticky;top:0;z-index:10;padding:11px 12px;background:#fffdfceb;backdrop-filter:blur(12px);border-bottom:1px solid var(--line);overflow:auto;white-space:nowrap} .filters{display:flex;gap:8px;max-width:850px;margin:auto} .filter{border:1px solid var(--line);background:white;color:var(--deep);padding:11px 14px;border-radius:999px;font-size:15px;font-weight:700;cursor:pointer} .filter.active{color:white;background:var(--rose);border-color:var(--rose)}
+main{max-width:620px;margin:auto;padding:10px 12px calc(84px + env(safe-area-inset-bottom))} .schedule-section{scroll-margin-top:65px;margin:22px 0 34px} .section-title{display:flex;align-items:center;gap:10px;margin-bottom:12px} .section-title span{display:grid;place-items:center;width:42px;height:42px;border-radius:50%;background:#fae6e7;font-size:22px} .section-title h2{margin:0;color:var(--deep);font-size:23px}
+.timeline{position:relative;padding-left:17px} .timeline:before{content:"";position:absolute;left:6px;top:4px;bottom:4px;width:2px;background:linear-gradient(var(--rose),#ecd0d4)} .event{position:relative;display:grid;grid-template-columns:96px 1fr;gap:9px;margin:0 0 12px;padding:15px 14px;background:var(--card);border:1px solid #f0dddd;border-radius:18px;box-shadow:0 5px 18px #9d657112} .event:before{content:"";position:absolute;left:-14px;top:20px;width:10px;height:10px;background:var(--rose);border:3px solid #fff;border-radius:50%;box-shadow:0 0 0 1px #dfadb5} .time{color:var(--rose);font-weight:850;font-size:17px;font-variant-numeric:tabular-nums} .event h3{margin:0 0 9px;font-size:18px;line-height:1.45} .meta{display:flex;flex-wrap:wrap;gap:5px 12px;color:#6f6264;font-size:15px;line-height:1.55} .note{margin-top:8px;padding:6px 9px;color:#82521b;background:#fff4dd;border-radius:10px;font-size:15px;line-height:1.5}
+.footer{padding:26px 14px;text-align:center;color:#986d74;background:#fff0f0;border-top:1px solid var(--line)} .footer strong{font-family:Georgia,serif;font-style:italic;font-size:19px}
+.hidden{display:none!important} .top{position:fixed;right:16px;bottom:calc(18px + env(safe-area-inset-bottom));width:50px;height:50px;border:0;border-radius:50%;background:var(--rose);color:white;font-size:19px;box-shadow:0 5px 16px #6d344b55;cursor:pointer}
+@media(max-width:520px){.key-times{gap:2px}.event{grid-template-columns:88px 1fr}.schedule-section{margin-top:18px}.section-title h2{font-size:22px}}
+@media print{.sticky,.top{display:none} body{background:#fff} .event{break-inside:avoid;box-shadow:none}}
+.appbar{position:sticky;top:0;z-index:20;display:flex;align-items:center;gap:10px;height:54px;padding:0 16px;background:#fffdfcf2;backdrop-filter:blur(16px);border-bottom:1px solid var(--line);font-size:17px}.appbar-mark{display:grid;place-items:center;width:30px;height:30px;border-radius:9px;background:var(--rose);color:#fff}.appbar-date{margin-left:auto;color:#8b777a;font-size:12px;letter-spacing:.08em}.sticky{top:54px}.schedule-section{scroll-margin-top:120px}@media(min-width:700px){body{padding:20px 0}.appbar,.hero,.key-times,.sticky,main,.footer{max-width:620px;margin-left:auto;margin-right:auto}.appbar{border-radius:22px 22px 0 0}.footer{border-radius:0 0 22px 22px}body:before{content:"";position:fixed;inset:0;background:linear-gradient(135deg,#f2dfe2,#fbf8f6);z-index:-1}}
+
+/* iPhone focused refinements */
+html{-webkit-text-size-adjust:100%;text-size-adjust:100%;background:#f6f3f2}
+body{min-height:100dvh;overflow-x:hidden;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;overscroll-behavior-y:none}
+button,a{-webkit-tap-highlight-color:transparent;touch-action:manipulation}
+.appbar{padding-left:max(16px,env(safe-area-inset-left));padding-right:max(16px,env(safe-area-inset-right))}
+.hero,.key-times,.sticky,main,.footer{padding-left:max(14px,env(safe-area-inset-left));padding-right:max(14px,env(safe-area-inset-right))}
+.sticky{-webkit-overflow-scrolling:touch;scrollbar-width:none}.sticky::-webkit-scrollbar{display:none}
+.filters{width:max-content;min-width:100%}.filter{min-height:44px;display:inline-flex;align-items:center;justify-content:center}
+.event{min-width:0}.event-body{min-width:0}.event h3,.meta,.note{overflow-wrap:anywhere}
+.top{min-width:50px;min-height:50px;padding:0}
+@supports(padding:max(0px)){.footer{padding-bottom:max(26px,env(safe-area-inset-bottom))}}
+@media(max-width:430px){
+ .appbar{height:50px}.sticky{top:50px}.schedule-section{scroll-margin-top:112px}
+ .hero{padding-top:24px;padding-bottom:21px}.names{font-size:40px}.hero h1{font-size:24px;letter-spacing:.12em}
+ .date{font-size:16px;padding:9px 15px}.route{font-size:15px;line-height:1.55}
+ .key-times{padding-top:11px;padding-bottom:11px}.key{padding:8px 2px}.key strong{font-size:22px}.key span{font-size:13px}
+ main{padding-top:8px}.section-title{margin-bottom:10px}.section-title span{width:40px;height:40px}.section-title h2{font-size:21px}
+ .timeline{padding-left:15px}.event{grid-template-columns:82px minmax(0,1fr);gap:8px;padding:14px 12px;border-radius:17px}
+ .event:before{left:-13px}.time{font-size:16px;line-height:1.4}.event h3{font-size:18px}.meta,.note{font-size:15px}
+}
+@media(max-width:374px){
+ .names{font-size:36px}.hero h1{font-size:22px}.appbar-date{font-size:11px}
+ .event{grid-template-columns:76px minmax(0,1fr);padding:13px 10px}.time{font-size:15px}.event h3{font-size:17px}.meta,.note{font-size:14px}
+ .filter{font-size:14px;padding-left:12px;padding-right:12px}
+}
+@media(display-mode:standalone){.appbar{padding-top:env(safe-area-inset-top);height:calc(50px + env(safe-area-inset-top))}.sticky{top:calc(50px + env(safe-area-inset-top))}}
+
+</style>
+</head>
+<body>
+<div class="appbar"><span class="appbar-mark">♡</span><strong>婚禮流程</strong><span class="appbar-date">SAT · 16 JAN 2027</span></div>
+<header class="hero"><p class="names">Becky &amp; Patrick</p><h1>婚禮當日流程時間表</h1><div class="date">2027年1月16日（星期六）</div><p class="route">Plan A：JW Marriott → 大埔男家 → 九龍五旬節會 → JW Marriott</p></header>
+<section class="key-times" aria-label="重要時間提醒"><div class="key"><strong>11:10</strong><span>準時離開<br>JW 酒店</span></div><div class="key"><strong>12:45</strong><span>準時離開<br>大埔男家</span></div><div class="key"><strong>14:30</strong><span>教堂儀式<br>開始</span></div></section>
+<nav class="sticky" aria-label="流程分類"><div class="filters"><button class="filter active" data-filter="all">♡ 全部</button><button class="filter" data-filter="JW Marriott 接新娘">🏨 JW Marriott 接新娘</button><button class="filter" data-filter="大埔男家">🏠 大埔男家</button><button class="filter" data-filter="九龍五旬節會">⛪ 九龍五旬節會</button><button class="filter" data-filter="返回酒店／迎賓">🥂 返回酒店／迎賓</button><button class="filter" data-filter="晚宴">💍 晚宴</button></div></nav>
+<main><section class="schedule-section" data-section="JW Marriott 接新娘">
+      <div class="section-title"><span>🏨</span><h2>JW Marriott 接新娘</h2></div>
+      <div class="timeline"><article class="event" data-group="JW Marriott 接新娘">
+          <div class="time">06:00</div>
+          <div class="event-body">
+            <h3>化妝及髮型開始</h3>
+            <div class="meta"><span>📍 JW Marriott 酒店</span><span>👗 便服</span></div>
+            <div class="note">📝 化妝師到達</div>
+          </div>
+        </article><article class="event" data-group="JW Marriott 接新娘">
+          <div class="time">08:00</div>
+          <div class="event-body">
+            <h3>Photo / Video 到達，拍攝戒指、花球、細節照</h3>
+            <div class="meta"><span>📍 JW Marriott 酒店</span><span>👗 便服</span></div>
+            
+          </div>
+        </article><article class="event" data-group="JW Marriott 接新娘">
+          <div class="time">08:30</div>
+          <div class="event-body">
+            <h3>Groom & Groomsmen Photo</h3>
+            <div class="meta"><span>📍 JW Marriott 酒店</span><span>👗 禮服</span></div>
+            
+          </div>
+        </article><article class="event" data-group="JW Marriott 接新娘">
+          <div class="time">09:00</div>
+          <div class="event-body">
+            <h3>換旗袍</h3>
+            <div class="meta"><span>📍 JW Marriott 酒店</span><span>👗 旗袍</span></div>
+            
+          </div>
+        </article><article class="event" data-group="JW Marriott 接新娘">
+          <div class="time">09:00–09:40</div>
+          <div class="event-body">
+            <h3>新娘、家人及姊妹團拍攝</h3>
+            <div class="meta"><span>📍 JW Marriott 酒店</span><span>👗 旗袍</span></div>
+            
+          </div>
+        </article><article class="event" data-group="JW Marriott 接新娘">
+          <div class="time">09:40</div>
+          <div class="event-body">
+            <h3>接新娘、愛的宣言、中式交接</h3>
+            <div class="meta"><span>📍 JW Marriott 酒店</span><span>👗 旗袍</span></div>
+            
+          </div>
+        </article><article class="event" data-group="JW Marriott 接新娘">
+          <div class="time">10:00</div>
+          <div class="event-body">
+            <h3>女家敬茶（2–3 輪）</h3>
+            <div class="meta"><span>📍 JW Marriott 酒店</span><span>👗 旗袍</span></div>
+            
+          </div>
+        </article><article class="event" data-group="JW Marriott 接新娘">
+          <div class="time">10:20</div>
+          <div class="event-body">
+            <h3>女家家庭大合照</h3>
+            <div class="meta"><span>📍 JW Marriott 酒店</span><span>👗 旗袍</span></div>
+            
+          </div>
+        </article><article class="event" data-group="JW Marriott 接新娘">
+          <div class="time">10:30</div>
+          <div class="event-body">
+            <h3>新人酒店婚照</h3>
+            <div class="meta"><span>📍 JW Marriott 酒店</span><span>👗 旗袍</span></div>
+            
+          </div>
+        </article><article class="event" data-group="JW Marriott 接新娘">
+          <div class="time">10:45</div>
+          <div class="event-body">
+            <h3>兄弟姊妹團大合照</h3>
+            <div class="meta"><span>📍 JW Marriott 酒店</span><span>👗 旗袍</span></div>
+            
+          </div>
+        </article><article class="event" data-group="JW Marriott 接新娘">
+          <div class="time">11:10</div>
+          <div class="event-body">
+            <h3>前往大埔男家</h3>
+            <div class="meta"><span>📍 JW Marriott 酒店出發</span><span>👗 旗袍</span></div>
+            <div class="note">📝 車程約 50–60 分鐘</div>
+          </div>
+        </article></div>
+    </section><section class="schedule-section" data-section="大埔男家">
+      <div class="section-title"><span>🏠</span><h2>大埔男家</h2></div>
+      <div class="timeline"><article class="event" data-group="大埔男家">
+          <div class="time">12:00</div>
+          <div class="event-body">
+            <h3>入門儀式</h3>
+            <div class="meta"><span>📍 大埔男家</span><span>👗 旗袍</span></div>
+            
+          </div>
+        </article><article class="event" data-group="大埔男家">
+          <div class="time">12:00–12:30</div>
+          <div class="event-body">
+            <h3>男家敬茶（2–3 輪）</h3>
+            <div class="meta"><span>📍 大埔男家</span><span>👗 旗袍</span></div>
+            
+          </div>
+        </article><article class="event" data-group="大埔男家">
+          <div class="time">12:30</div>
+          <div class="event-body">
+            <h3>男家家庭照</h3>
+            <div class="meta"><span>📍 大埔男家</span><span>👗 旗袍</span></div>
+            
+          </div>
+        </article><article class="event" data-group="大埔男家">
+          <div class="time">12:45</div>
+          <div class="event-body">
+            <h3>前往九龍五旬節會</h3>
+            <div class="meta"><span>📍 大埔男家出發</span><span>👗 旗袍</span></div>
+            <div class="note">📝 車程約 40–45 分鐘</div>
+          </div>
+        </article></div>
+    </section><section class="schedule-section" data-section="九龍五旬節會">
+      <div class="section-title"><span>⛪</span><h2>九龍五旬節會</h2></div>
+      <div class="timeline"><article class="event" data-group="九龍五旬節會">
+          <div class="time">13:30</div>
+          <div class="event-body">
+            <h3>到達教堂</h3>
+            <div class="meta"><span>📍 教堂</span><span>👗 旗袍</span></div>
+            
+          </div>
+        </article><article class="event" data-group="九龍五旬節會">
+          <div class="time">13:30–13:50</div>
+          <div class="event-body">
+            <h3>午餐（新人、兄弟姊妹）</h3>
+            <div class="meta"><span>📍 教堂</span><span>👗 旗袍</span></div>
+            <div class="note">📝 簡便午餐</div>
+          </div>
+        </article><article class="event" data-group="九龍五旬節會">
+          <div class="time">13:50–14:15</div>
+          <div class="event-body">
+            <h3>換婚紗＋補妝＋第二造型</h3>
+            <div class="meta"><span>📍 教堂新娘房</span><span>👗 婚紗</span></div>
+            <div class="note">📝 化妝師隨行</div>
+          </div>
+        </article><article class="event" data-group="九龍五旬節會">
+          <div class="time">14:15–14:25</div>
+          <div class="event-body">
+            <h3>與牧師確認流程／教堂內拍攝</h3>
+            <div class="meta"><span>📍 教堂</span><span>👗 婚紗</span></div>
+            
+          </div>
+        </article><article class="event" data-group="九龍五旬節會">
+          <div class="time">14:25</div>
+          <div class="event-body">
+            <h3>Veil Down</h3>
+            <div class="meta"><span>📍 教堂</span><span>👗 婚紗</span></div>
+            
+          </div>
+        </article><article class="event" data-group="九龍五旬節會">
+          <div class="time">14:30</div>
+          <div class="event-body">
+            <h3>婚禮開始（父親陪同進場）</h3>
+            <div class="meta"><span>📍 教堂</span><span>👗 婚紗</span></div>
+            
+          </div>
+        </article><article class="event" data-group="九龍五旬節會">
+          <div class="time">14:30–15:30</div>
+          <div class="event-body">
+            <h3>Ceremony（宣誓、交換戒指、簽婚書等）</h3>
+            <div class="meta"><span>📍 教堂</span><span>👗 婚紗</span></div>
+            
+          </div>
+        </article><article class="event" data-group="九龍五旬節會">
+          <div class="time">15:30–16:00</div>
+          <div class="event-body">
+            <h3>嘉賓大合照</h3>
+            <div class="meta"><span>📍 教堂</span><span>👗 婚紗</span></div>
+            
+          </div>
+        </article><article class="event" data-group="九龍五旬節會">
+          <div class="time">16:00–16:15</div>
+          <div class="event-body">
+            <h3>新人婚紗照</h3>
+            <div class="meta"><span>📍 教堂</span><span>👗 婚紗</span></div>
+            
+          </div>
+        </article><article class="event" data-group="九龍五旬節會">
+          <div class="time">16:30</div>
+          <div class="event-body">
+            <h3>返回 JW Marriott 酒店</h3>
+            <div class="meta"><span>📍 教堂出發</span><span>👗 婚紗</span></div>
+            <div class="note">📝 車程約 30 分鐘</div>
+          </div>
+        </article></div>
+    </section><section class="schedule-section" data-section="返回酒店／迎賓">
+      <div class="section-title"><span>🥂</span><h2>返回酒店／迎賓</h2></div>
+      <div class="timeline"><article class="event" data-group="返回酒店／迎賓">
+          <div class="time">17:00</div>
+          <div class="event-body">
+            <h3>到達酒店</h3>
+            <div class="meta"><span>📍 JW Marriott 酒店</span><span>👗 婚紗</span></div>
+            
+          </div>
+        </article><article class="event" data-group="返回酒店／迎賓">
+          <div class="time">17:00–17:30</div>
+          <div class="event-body">
+            <h3>換迎賓晚裝（第二套晚裝）</h3>
+            <div class="meta"><span>📍 JW 新娘房</span><span>👗 晚裝 A</span></div>
+            
+          </div>
+        </article><article class="event" data-group="返回酒店／迎賓">
+          <div class="time">17:30–19:15</div>
+          <div class="event-body">
+            <h3>迎賓、簽名、賓客合照、補敬茶</h3>
+            <div class="meta"><span>📍 JW Reception 區</span><span>👗 晚裝 A</span></div>
+            
+          </div>
+        </article></div>
+    </section><section class="schedule-section" data-section="晚宴">
+      <div class="section-title"><span>💍</span><h2>晚宴</h2></div>
+      <div class="timeline"><article class="event" data-group="晚宴">
+          <div class="time">19:15</div>
+          <div class="event-body">
+            <h3>換回婚紗造型</h3>
+            <div class="meta"><span>📍 新娘房</span><span>👗 婚紗</span></div>
+            
+          </div>
+        </article><article class="event" data-group="晚宴">
+          <div class="time">19:30</div>
+          <div class="event-body">
+            <h3>嘉賓入席</h3>
+            <div class="meta"><span>📍 Ballroom</span><span>👗 婚紗</span></div>
+            
+          </div>
+        </article><article class="event" data-group="晚宴">
+          <div class="time">19:40</div>
+          <div class="event-body">
+            <h3>MC Opening＋播放成長片</h3>
+            <div class="meta"><span>📍 Ballroom</span><span>👗 婚紗</span></div>
+            
+          </div>
+        </article><article class="event" data-group="晚宴">
+          <div class="time">19:55</div>
+          <div class="event-body">
+            <h3>新人進場</h3>
+            <div class="meta"><span>📍 Ballroom</span><span>👗 婚紗</span></div>
+            
+          </div>
+        </article><article class="event" data-group="晚宴">
+          <div class="time">20:00</div>
+          <div class="event-body">
+            <h3>切蛋糕</h3>
+            <div class="meta"><span>📍 Ballroom</span><span>👗 婚紗</span></div>
+            
+          </div>
+        </article><article class="event" data-group="晚宴">
+          <div class="time">20:05</div>
+          <div class="event-body">
+            <h3>香檳祝酒</h3>
+            <div class="meta"><span>📍 Ballroom</span><span>👗 婚紗</span></div>
+            
+          </div>
+        </article><article class="event" data-group="晚宴">
+          <div class="time">20:15</div>
+          <div class="event-body">
+            <h3>上菜</h3>
+            <div class="meta"><span>📍 Ballroom</span><span>👗 婚紗</span></div>
+            
+          </div>
+        </article><article class="event" data-group="晚宴">
+          <div class="time">20:20</div>
+          <div class="event-body">
+            <h3>換紅色晚裝（第三套晚裝）</h3>
+            <div class="meta"><span>📍 新娘房</span><span>👗 紅色晚裝</span></div>
+            
+          </div>
+        </article><article class="event" data-group="晚宴">
+          <div class="time">21:00</div>
+          <div class="event-body">
+            <h3>敬酒（約 15 分鐘）</h3>
+            <div class="meta"><span>📍 Ballroom</span><span>👗 紅色晚裝</span></div>
+            
+          </div>
+        </article><article class="event" data-group="晚宴">
+          <div class="time">21:15</div>
+          <div class="event-body">
+            <h3>Group Photo</h3>
+            <div class="meta"><span>📍 Ballroom</span><span>👗 紅色晚裝</span></div>
+            
+          </div>
+        </article><article class="event" data-group="晚宴">
+          <div class="time">21:45</div>
+          <div class="event-body">
+            <h3>早拍晚播（Same Day Edit）</h3>
+            <div class="meta"><span>📍 Ballroom</span><span>👗 紅色晚裝</span></div>
+            
+          </div>
+        </article><article class="event" data-group="晚宴">
+          <div class="time">22:00–23:00</div>
+          <div class="event-body">
+            <h3>自由拍照、賓客互動</h3>
+            <div class="meta"><span>📍 Ballroom</span><span>👗 紅色晚裝</span></div>
+            
+          </div>
+        </article><article class="event" data-group="晚宴">
+          <div class="time">23:00</div>
+          <div class="event-body">
+            <h3>送客</h3>
+            <div class="meta"><span>📍 Ballroom 入口</span><span>👗 紅色晚裝</span></div>
+            
+          </div>
+        </article></div>
+    </section></main>
+<footer class="footer"><strong>Thank you for celebrating with us! ♡</strong></footer>
+<button class="top" aria-label="返回頂部" onclick="scrollTo({top:0,behavior:'smooth'})">↑</button>
+<script>
+document.querySelectorAll('.filter').forEach(btn=>btn.addEventListener('click',()=>{
+ document.querySelectorAll('.filter').forEach(x=>x.classList.remove('active')); btn.classList.add('active');
+ const f=btn.dataset.filter; document.querySelectorAll('.schedule-section').forEach(s=>s.classList.toggle('hidden',f!=='all'&&s.dataset.section!==f));
+ if(f!=='all') document.querySelector(`[data-section="${f}"]`).scrollIntoView({behavior:'smooth',block:'start'});
+}));
+</script>
+</body></html>
